@@ -7,12 +7,10 @@ public class Rompbot extends DefaultBWListener {
     @Override
     public void onStart() {
             Game = BWClient.getGame();
-
     }
 
     @Override
     public void onFrame(){
-
         Game.drawTextScreen(100,100, "ROMPBOT ONLINE");
     }
 
@@ -24,6 +22,8 @@ public class Rompbot extends DefaultBWListener {
     public static void main(String[] args){
         new Rompbot().run();
     }
+
+    //this is a test comment to see if my git commit is working properly
 
 
 }
