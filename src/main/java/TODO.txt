@@ -1,0 +1,16 @@
+Architecture outline for Rompbot
+
+Rompbot: top level, initializes private classes, communicates with game client
+    Event Handler: Eyes and ears of the bot, Will anaylize information about game state for Macro/Micro handlers to utilize
+    Macro Handler: Will deal with macro events ie building bases and production
+    Micro Handler: will deal with all unit control
+
+Possible util classes
+    Painter: paint and label things on screen
+    possible micro subclasses: Could be functions but may work better as individual classes: scouting micro, offense/defense micro
+
+
+Eventhandler needs return functions that can be called by Macro and Microhandlers. Don't want to restrict I/O of bot to onFrame() because information
+processing can be done asynchronously.
+
+Eventhandler is redundant, already handled by RompBot which extends Dfault BWlistener which implements BWEventListener

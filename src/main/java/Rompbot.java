@@ -3,6 +3,9 @@ import bwapi.*;
 public class Rompbot extends DefaultBWListener {
     BWClient BWClient;
     Game  Game;
+    EventHandler RompEventHandler;
+    //MacroHandler RompMacroHandler;
+    //MicroHandler RompMicroHandler;
 
     @Override
     public void onStart() {
@@ -17,14 +20,15 @@ public class Rompbot extends DefaultBWListener {
     void run(){
             BWClient = new BWClient(this);
             BWClient.startGame();
+            RompEventHandler = new EventHandler(BWClient);
+            //RompMacroHandler = new MacroHandler(BWClient);
+            //RompMicroHandler = new MicroHandler(BWClient);
     }
 
     public static void main(String[] args){
         new Rompbot().run();
     }
 
-    //this is a test comment to see if my git commit is working properly. one more test sentence
-    //just in case
 
 
 }
